@@ -12,9 +12,7 @@ jobs:
       run: |
         #echo "::set-output name=matrix::$(./paths_to_dockerfile.sh | jq .)"
         #echo "::set-output name=matrix::{\"dockerfiles\":[\"./aiidalab/Dockerfile\"]}"
-        export PATHS_TO_DOCKERFILE=`find -name Dockerfile | jq -R -s 'split("\n")[:-1]'`
-        echo "::set-output name=matrix::{\"dockerfiles\": $PATHS_TO_DOCKERFILE}"
-        echo "::set-output name=matrix::{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}"
+        echo "::set-output name=matrix::{\"dockerfiles\": `find -name Dockerfile | jq -R -s 'split("\n")[:-1]'`}"
         
   check-matrix:
     runs-on: ubuntu-latest
