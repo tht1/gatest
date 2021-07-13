@@ -1,7 +1,7 @@
 name:testga
 on:[push]
 jobs:
-  check-release
+  check-release:
   runs-on: ubuntu-latest
   steps: 
   - uses: actions/checkout@v2
