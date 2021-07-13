@@ -15,7 +15,7 @@ jobs:
         PATHS_TO_DOCKERFILE=`find -name Dockerfile | jq -R -s 'split("\n")[:-1]'`
         export MAT="{\\\"dockerfiles\\\": ${PATHS_TO_DOCKERFILE//\"/\\\"}}"
         echo $MAT
-        echo "::set-output name=matrix::{"dockerfiles: [ "./dir2/Dockerfile", "./Dockerfile", "./dir3/Dockerfile", "./dir1/Dockerfile" ]"
+        echo "::set-output name=matrix::{"dockerfiles": [ "./dir2/Dockerfile", "./Dockerfile", "./dir3/Dockerfile", "./dir1/Dockerfile" ]"
         
   check-matrix:
     runs-on: ubuntu-latest
