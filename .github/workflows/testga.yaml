@@ -13,6 +13,6 @@ jobs:
       - uses: docker/build-push-action@v2    
         id: docker_build
         with:
+          tags: thtb2access/testga:1.0
           push: true
-          tags: thtb2access/testga:latest
      - run: echo ${{ steps.docker_build.outputs.digest }}     
