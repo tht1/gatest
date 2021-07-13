@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: matrix
     strategy:
-      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
+      matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
     # Only run of there are Dockerfiles present
     #if: "join(fromJSON(needs.matrix.outputs.matrix), '') != ''"
     steps:
