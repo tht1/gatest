@@ -19,7 +19,7 @@ jobs:
         #echo "::set-output name=matrix::$(echo ${PATHS_TO_DOCKERFILE//\"/\\\"})"
         PATHS_TO_DOCKERFILE='{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}'
         #echo $PATHS_TO_DOCKERFILE
-        echo "::set-output name=matrix::$(echo -n $PATHS_TO_DOCKERFILE)"
+        echo "::set-output name=matrix::$PATHS_TO_DOCKERFILE"
         
   check-matrix:
     runs-on: ubuntu-latest
