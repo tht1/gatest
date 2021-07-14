@@ -17,7 +17,7 @@ jobs:
         #echo $MAT
         #PATHS_TO_DOCKERFILE=$(echo {\"dockerfiles\": $(find -name Dockerfile | jq -R -s 'split("\n")[:-1]')})
         #echo "::set-output name=matrix::$(echo ${PATHS_TO_DOCKERFILE//\"/\\\"})"
-        PATHS_TO_DOCKERFILE='::set-output name=matrix::{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}'
+        export PATHS_TO_DOCKERFILE='::set-output name=matrix::{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}'
         echo "$PATHS_TO_DOCKERFILE"
         #echo "::set-output name=matrix::{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}"
         
