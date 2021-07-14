@@ -18,7 +18,8 @@ jobs:
         #PATHS_TO_DOCKERFILE=$(echo {\"dockerfiles\": $(find -name Dockerfile | jq -R -s 'split("\n")[:-1]')})
         PATHS_TO_DOCKERFILE='{"dockerfiles": [ "./Dockerfile", "./dir3/Dockerfile", "./dir1/Dockerfile", "./dir2/Dockerfile" ]}'
         #echo "::set-output name=matrix::$(echo ${PATHS_TO_DOCKERFILE//\"/\\\"})"
-        echo "::set-output name=matrix::{\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]})"
+        PATHS_TO_DOCKERFILE={\"dockerfiles\": [ \"./Dockerfile\", \"./dir3/Dockerfile\", \"./dir1/Dockerfile\", \"./dir2/Dockerfile\" ]}
+        echo "::set-output name=matrix::$(echo $PATHS_TO_DOCKERFILE)"
         
   check-matrix:
     runs-on: ubuntu-latest
